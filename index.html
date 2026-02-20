@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Join Official Channel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1118719643215347'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1118719643215347&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
+background:#1b1b2f;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding-top:60px;
+color:#fff;
+}
+
+.container{
+width:92%;
+max-width:380px;
+padding:28px 22px;
+border-radius:20px;
+background:#242442;
+text-align:center;
+}
+
+.brand-title{
+font-size:22px;
+font-weight:700;
+margin-bottom:18px;
+color:#7a8cff;
+}
+
+.logo-container{
+width:105px;
+height:105px;
+margin:0 auto 16px;
+border-radius:50%;
+overflow:hidden;
+}
+
+.logo-container img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.bold-profit{
+font-size:15px;
+font-weight:600;
+color:#00d4ff;
+margin-bottom:12px;
+}
+
+.timer-box{
+margin:12px 0;
+font-size:24px;
+font-weight:700;
+color:#00ffc8;
+}
+
+.live-box{
+margin-bottom:18px;
+font-size:14px;
+font-weight:600;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:6px;
+}
+
+.live-dot{
+width:8px;
+height:8px;
+background:#ff3b3b;
+border-radius:50%;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0.3;}
+100%{opacity:1;}
+}
+
+.counter-number{
+color:#00ff88;
+}
+
+.cta-btn{
+width:100%;
+padding:15px 0;
+border:none;
+border-radius:14px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+margin-bottom:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+}
+
+.primary{
+background:#7a8cff;
+color:#111;
+}
+
+.secondary{
+background:#00d4ff;
+color:#111;
+}
+
+.footer-text{
+font-size:13px;
+opacity:.7;
+margin-top:10px;
+}
+</style>
+
+<script>
+let timeLeft = 30;
+let clickLocked = false;
+let liveCount;
+
+function startTimer(){
+const timer = document.getElementById("countdown");
+const interval = setInterval(()=>{
+timeLeft--;
+timer.textContent = "00:" + (timeLeft < 10 ? "0"+timeLeft : timeLeft);
+if(timeLeft <= 0){
+clearInterval(interval);
+timer.textContent = "ENDED";
+}
+},1000);
+}
+
+function startLiveCounter(){
+const counterEl = document.getElementById("liveNumber");
+liveCount = Math.floor(Math.random() * 120) + 170;
+counterEl.textContent = liveCount;
+
+setInterval(()=>{
+liveCount += 1;
+counterEl.textContent = liveCount;
+},4000);
+}
+
+function goTelegram(e){
+if(clickLocked) return;
+clickLocked = true;
+
+const btn = e.currentTarget;
+btn.innerHTML = '<i class="fab fa-telegram-plane"></i> OPENING...';
+btn.style.opacity = "0.8";
+
+/* 🔥 Subscribe Event Tracking */
+fbq('track', 'Subscribe');
+
+setTimeout(()=>{
+window.location.href = "https://t.me/+_RkEhPgiFO82MmU1";
+},500);
+}
+
+window.onload = function(){
+startTimer();
+startLiveCounter();
+};
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1 class="brand-title">SHAHIL ARMY</h1>
+
+<div class="logo-container">
+<img src="https://i.ibb.co/7xgbD2fx/logo.jpg">
+</div>
+
+<p class="bold-profit">DAILY FREE GIFTCODE</p>
+
+<div class="timer-box" id="countdown">00:30</div>
+
+<div class="live-box">
+<div class="live-dot"></div>
+LIVE • <span class="counter-number" id="liveNumber"></span> USERS IN VC
+</div>
+
+<button class="cta-btn primary" onclick="goTelegram(event)">
+<i class="fab fa-telegram-plane"></i> JOIN NOW
+</button>
+
+<button class="cta-btn secondary" onclick="goTelegram(event)">
+<i class="fab fa-telegram-plane"></i> VIP CHANNEL ACCESS
+</button>
+
+<p class="footer-text">Official Channel • Secure Access</p>
+
+</div>
+
+</body>
+</html>
